@@ -31,14 +31,14 @@ public class CardTrick {
         }
         
         //Viewing the randomly created cards for better testing
-        System.out.println("Magin Hand cards:");
+        System.out.println("Magic Hand cards:");
         
         for (Card card: magicHand){
             System.out.println(card.getValue() + " of " + card.getSuit());
         }
         
         //insert code to ask the user for Card value and suit, create their card
-        Scanner inp = new Scanner(System.in);
+        /*Scanner inp = new Scanner(System.in);
         System.out.print("Enter card value (1-13): ");
         int value = inp.nextInt();
         inp.nextLine();
@@ -46,28 +46,30 @@ public class CardTrick {
         String suit = inp.nextLine();
         Card userCard = new Card();
         userCard.setValue(value);
-        userCard.setSuit(suit);
+        userCard.setSuit(suit);*/
+        
+        // add one luckcard hard code 2,clubs
+        Card luckyCard = new Card();
+        luckyCard.setValue(2);
+        luckyCard.setSuit("Clubs");
         
         // and search magicHand here
         //Then report the result here
         boolean found = false;
         
         for (int i = 0; i < magicHand.length; i++){
-            if (magicHand[i].getValue() == userCard.getValue() && magicHand[i].getSuit().equalsIgnoreCase(userCard.getSuit())){
+            if (magicHand[i].getValue() == luckyCard.getValue() && magicHand[i].getSuit().equalsIgnoreCase(luckyCard.getSuit())){
                 found=true;  
-                System.out.println("Your card exists in the magic hand at index " + i);
+                System.out.println("Congratulations, you won! The lucky card exists in the magic hand at index " + i);
                 break;
             }
         }
-        
+       
         if(!found){
-            System.out.println("Your card was not found in the magic hand");
+            System.out.println("You lost! The lucky card was not found in the magic hand");
         }
         
-        // add one luckcard hard code 2,clubs
-        Card luckyCard = new Card();
-        luckyCard.setValue(2);
-        luckyCard.setSuit("clubs");
+  
     }
     
 }
