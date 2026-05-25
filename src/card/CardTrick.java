@@ -68,8 +68,5 @@ public class CardTrick {
         if(!found){
             System.out.println("You lost! The lucky card was not found in the magic hand");
         }
-        
-  
-    }
-    
+    }   
 }
