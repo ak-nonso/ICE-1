@@ -44,8 +44,9 @@ public class CardTrick {
         System.out.print("Enter card value (1-13): ");
         int value = inp.nextInt();
         inp.nextLine();
-        System.out.print("Enter card suit: ");
-        String suit = inp.nextLine();
+        System.out.print("Enter a card suit (0-3 where 0=Hearts, 1=Diamonds, 2=Clubs, 3=Spades): ");
+        int suitIndex = inp.nextInt();
+        String suit = Card.SUITS[suitIndex];
         Card userCard = new Card();
         userCard.setValue(value);
         userCard.setSuit(suit);*/
