@@ -4,7 +4,6 @@
  */
 package card;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -29,6 +28,13 @@ public class CardTrick {
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
             c.setSuit(Card.SUITS[rnd.nextInt(4)]);
             magicHand[i] = c;   
+        }
+        
+        //Viewing the randomly created cards for better testing
+        System.out.println("Magin Hand cards:");
+        
+        for (Card card: magicHand){
+            System.out.println(card.getValue() + " of " + card.getSuit());
         }
         
         //insert code to ask the user for Card value and suit, create their card
